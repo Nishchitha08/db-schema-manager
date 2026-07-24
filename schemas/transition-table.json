@@ -1,0 +1,15 @@
+{
+  "tableName": "transition_table",
+  "description": "State machine transitions mapping inbound events to outbound actions",
+  "fields": [
+    { "name": "transition_id", "type": "uint16", "description": "Unique transition identifier" },
+    { "name": "current_state", "type": "uint8", "description": "Current state ID" },
+    { "name": "inbound_msg_id", "type": "uint16", "description": "Triggering inbound message ID" },
+    { "name": "next_state", "type": "uint8", "description": "State to transition to" },
+    { "name": "outbound_msg_id", "type": "uint16", "description": "Outbound message to send on transition" },
+    { "name": "guard_condition", "type": "string", "maxLength": 64, "description": "Optional guard expression" },
+    { "name": "priority", "type": "uint8", "description": "Transition priority for conflict resolution" }
+  ],
+  "primaryKey": "transition_id",
+  "maxRecords": 2048
+}
