@@ -1,0 +1,14 @@
+{
+  "tableName": "outbound_table",
+  "description": "Messages sent to external systems",
+  "fields": [
+    { "name": "msg_id", "type": "uint16", "description": "Unique message identifier" },
+    { "name": "dest_system", "type": "string", "maxLength": 32, "description": "Target system name" },
+    { "name": "payload_type", "type": "uint8", "description": "Payload format identifier" },
+    { "name": "payload_size", "type": "uint32", "description": "Size of payload in bytes" },
+    { "name": "retry_count", "type": "uint8", "description": "Number of send retries" },
+    { "name": "timeout_ms", "type": "uint32", "description": "Response timeout in milliseconds" }
+  ],
+  "primaryKey": "msg_id",
+  "maxRecords": 1024
+}
