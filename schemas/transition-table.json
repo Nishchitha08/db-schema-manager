@@ -1,0 +1,15 @@
+{
+  "tableName": "transition_table",
+  "description": "State machine transitions that link inbound events to outbound actions. Unlike inbound/outbound tables which define message formats, the transition table defines WHEN and HOW messages flow - mapping a received inbound message in a given state to the appropriate outbound response and next state.",
+  "fields": [
+    { "name": "transition_id", "type": "uint16", "description": "Unique transition identifier" },
+    { "name": "current_state", "type": "uint8", "description": "Current state ID" },
+    { "name": "inbound_msg_id", "type": "uint16", "description": "Triggering inbound message ID" },
+    { "name": "next_state", "type": "uint8", "description": "State to transition to" },
+    { "name": "outbound_msg_id", "type": "uint16", "description": "Outbound message to send on transition" },
+    { "name": "guard_condition", "type": "string", "maxLength": 64, "description": "Optional guard expression" },
+    { "name": "priority", "type": "uint8", "description": "Transition priority for conflict resolution" }
+  ],
+  "primaryKey": "transition_id",
+  "maxRecords": 2048
+}

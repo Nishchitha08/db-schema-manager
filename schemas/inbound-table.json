@@ -1,0 +1,14 @@
+{
+  "tableName": "inbound_table",
+  "description": "Messages received from external systems",
+  "fields": [
+    { "name": "msg_id", "type": "uint16", "description": "Unique message identifier" },
+    { "name": "source_system", "type": "string", "maxLength": 32, "description": "Originating system name" },
+    { "name": "payload_type", "type": "uint8", "description": "Payload format identifier" },
+    { "name": "payload_size", "type": "uint32", "description": "Size of payload in bytes" },
+    { "name": "timestamp", "type": "uint64", "description": "Reception timestamp (epoch ms)" },
+    { "name": "priority", "type": "uint8", "description": "Message priority (0-255)" }
+  ],
+  "primaryKey": "msg_id",
+  "maxRecords": 1024
+}
